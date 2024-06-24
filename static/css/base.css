@@ -5,6 +5,7 @@
 :root {
     --battleship-grey: #878E8D;
     --raisin-black: #2E282A;
+    --white: #fff;
     --logo-font: 'Rubik', sans-serif;
     --main-font: 'Roboto Slab', serif;
 }
@@ -29,7 +30,7 @@ body {
     font-size: 3rem;
 }
 
-.main-header {
+.bg-grey {
     background-color: var(--battleship-grey);
 }
 
@@ -71,8 +72,22 @@ body {
     color: white;
 }
 
+.dropdown-item:hover {
+    background-color: var(--raisin-black) !important;
+    color: var(--white);
+}
+
+.dropdown-menu > a {
+    font-size: 1.4rem;
+    color: var(--white);
+}
+
 .text-black {
     color: #000 !important;
+}
+
+.text-white {
+    color: var(--white);
 }
 
 .border-black {
@@ -83,9 +98,9 @@ body {
 
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
-  .container {
-    max-width: 80%;
-  }
+    .container {
+        max-width: 80%;
+    }
 }
 
 /* fixed top navbar only on medium and up */
