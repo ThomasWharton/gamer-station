@@ -1,0 +1,1 @@
+web: gunicorn gamer_station.wsgi:application
