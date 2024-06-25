@@ -14,7 +14,6 @@ html {
     height: 100%;
     font-size: 62.5%;
     scroll-behavior: smooth;
-    /* scroll-padding-top: 18.5rem; */
 }
 
 body {
@@ -32,6 +31,10 @@ body {
 
 .bg-grey {
     background-color: var(--battleship-grey);
+}
+
+.bg-black {
+    background-color: var(--raisin-black);
 }
 
 /* from Bulma */
@@ -70,6 +73,10 @@ body {
 .btn-black:focus {
     background: #222;
     color: white;
+}
+
+.nav-link:hover {
+    color: var(--raisin-black) !important;
 }
 
 .dropdown-item:hover {
