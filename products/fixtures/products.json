@@ -1,0 +1,301 @@
+[
+    {
+        "model": "products.product",
+        "pk": 1,
+        "fields": {
+            "category": 1,
+            "name": "Intel gaming PC",
+            "description": "test",
+            "price": "2000.00",
+            "rating": "4.70",
+            "image_url": null,
+            "image": "gaming-pc-1.webp"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 2,
+        "fields": {
+            "category": 1,
+            "name": "AMD Gaming PC",
+            "description": "test",
+            "price": "1800.00",
+            "rating": "4.50",
+            "image_url": null,
+            "image": ""
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 3,
+        "fields": {
+            "category": 4,
+            "name": "Razer Viper V2 Pro Gaming Mouse",
+            "description": "Razer's flagship gaming mouse",
+            "price": "100.00",
+            "rating": "4.90",
+            "image_url": null,
+            "image": ""
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 4,
+        "fields": {
+            "category": 4,
+            "name": "Logitch G Pro Wireless Superlight Gaming Mouse",
+            "description": "The best selling wireless gaming mouse on the market! Favoured by pro gamers to give the competitive edge they are looking for in their matches.",
+            "price": "95.00",
+            "rating": "4.80",
+            "image_url": null,
+            "image": ""
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 5,
+        "fields": {
+            "category": 4,
+            "name": "Logitech Gaming PC Headset",
+            "description": "High-performance gaming headset with noise-cancelling technology",
+            "price": "150.00",
+            "rating": "4.80",
+            "image_url": "",
+            "image": ""
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 6,
+        "fields": {
+            "category": 2,
+            "name": "Alienware Gaming Laptop",
+            "description": "High performance gaming laptop suitable for most games.",
+            "price": "1500.00",
+            "rating": "4.50",
+            "image_url": "",
+            "image": ""
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 7,
+        "fields": {
+            "category": 2,
+            "name": "MSI Gaming Laptop",
+            "description": "Budget-friendly gaming laptop with great performance.",
+            "price": "800.00",
+            "rating": "4.20",
+            "image_url": "",
+            "image": ""
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 8,
+        "fields": {
+            "category": 3,
+            "name": "Intel i7 13700k Processor",
+            "description": "High-end intel processor with overclocking turbo boost.",
+            "price": "450.00",
+            "rating": "4.90",
+            "image_url": "",
+            "image": ""
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 9,
+        "fields": {
+            "category": 3,
+            "name": "NVIDIA RTX 3080 GPU",
+            "description": "Latest NVIDIA graphics card for top-tier gaming performance.",
+            "price": "700.00",
+            "rating": "4.90",
+            "image_url": "",
+            "image": ""
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 10,
+        "fields": {
+            "category": 3,
+            "name": "AMD Ryzen 9 5900X Processor",
+            "description": "Powerful CPU for gaming and productivity.",
+            "price": "550.00",
+            "rating": "4.80",
+            "image_url": "",
+            "image": ""
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 11,
+        "fields": {
+            "category": 3,
+            "name": "Corsair Vengeance 32GB RAM",
+            "description": "High-speed RAM for multitasking and gaming.",
+            "price": "180.00",
+            "rating": "4.70",
+            "image_url": "",
+            "image": ""
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 12,
+        "fields": {
+            "category": 2,
+            "name": "Samsung 970 EVO SSD",
+            "description": "Fast SSD for quick load times and performance. 500GB storage.",
+            "price": "150.00",
+            "rating": "4.80",
+            "image_url": "",
+            "image": ""
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 13,
+        "fields": {
+            "category": 3,
+            "name": "ASUS ROG Motherboard",
+            "description": "Gaming motherboard with advanced features.",
+            "price": "250.00",
+            "rating": "4.70",
+            "image_url": "",
+            "image": ""
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 14,
+        "fields": {
+            "category": 4,
+            "name": "Ducky One 3 mini 60% Keyboard",
+            "description": "Ducky's flagship 50% mechanical keyboard",
+            "price": "110.00",
+            "rating": "4.60",
+            "image_url": "",
+            "image": ""
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 15,
+        "fields": {
+            "category": 4,
+            "name": "Razer Huntsman V2 Mechanical Gaming Keyboard",
+            "description": "Razer Huntsman V2 mechanical gaming keyboard with RGB",
+            "price": "100.00",
+            "rating": "4.50",
+            "image_url": "",
+            "image": ""
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 16,
+        "fields": {
+            "category": 3,
+            "name": "NZXT Kraken 240 Black AIO CPU Water Cooler - 240mm",
+            "description": "AIO Cooler, Black Cooler, 1.54 LCD Display, Intel and AMD Socket Compatibility, 6 Year Warranty",
+            "price": "125.00",
+            "rating": "4.30",
+            "image_url": "",
+            "image": ""
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 17,
+        "fields": {
+            "category": 3,
+            "name": "Asus TUF Gaming 1000W 80 Plus Gold Power Supply",
+            "description": "The TUF Gaming 1000W Gold is an efficient, resilient and dependable PSU that’s engineered for the long haul.",
+            "price": "180.00",
+            "rating": "4.80",
+            "image_url": "",
+            "image": ""
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 18,
+        "fields": {
+            "category": 3,
+            "name": "Seasonic Prime TX-850 850W 80 Plus Titanium Modular Power Supply",
+            "description": "Powerful 850 Watt power supply, 80 PLUS Titanium for maximum efficiency, Powerful single rail rated for 70 A, modular cable management with flat cables, 12 year manufacturer's warranty",
+            "price": "270.00",
+            "rating": "4.90",
+            "image_url": "",
+            "image": ""
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 19,
+        "fields": {
+            "category": 3,
+            "name": "Asrock Radeon RX 7900 XTX Phantom Gaming OC 24GB GDDR6 PCI-Express Graphics Card",
+            "description": "RX7900XTX PG 24GO, Core Clock: 2455MHz, Boost Clock: 2615MHz, Memory: 24576MB 20000MHz GDDR6, Stream Processors: 6144, DirectX 12 Support, Vulkan Support, RDNA3, Freesync 2 HDR support, 3yr Warranty",
+            "price": "875.00",
+            "rating": "4.70",
+            "image_url": "",
+            "image": ""
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 20,
+        "fields": {
+            "category": 3,
+            "name": "G.Skill Trident Z5 RGB XMP 32GB (2x16GB) DDR5 PC5-60000C38 8000MHz Dual Channel Kit",
+            "description": "F5-8000J3848H16GX2-TZ5RS, 8000MHz RAM Speed, CAS 38-48-48-128 Timings, 1.45v VDIMM, Intel XMP",
+            "price": "260.00",
+            "rating": "4.50",
+            "image_url": "",
+            "image": ""
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 21,
+        "fields": {
+            "category": 4,
+            "name": "Razer Kraken V3 Wired USB Gaming Headset with Razer Chroma RGB",
+            "description": "Razer HyperSense, Razer™ TriForce Titanium 50mm Drivers, THX Spatial Audio",
+            "price": "100.00",
+            "rating": "4.80",
+            "image_url": "",
+            "image": ""
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 22,
+        "fields": {
+            "category": 3,
+            "name": "Seagate 4TB IronWolf PRO NAS HDD 7200RPM 128MB Cache Internal Hard Drive",
+            "description": "4TB Storage Hard Drive",
+            "price": "200.00",
+            "rating": "4.60",
+            "image_url": "",
+            "image": ""
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 23,
+        "fields": {
+            "category": 3,
+            "name": "Intel Core i9-14900KS (Raptor Lake-S) Socket LGA1700 Processor",
+            "description": "Intel Core i9-14900KS (Raptor Lake-S) Socket LGA1700 Processor",
+            "price": "700.00",
+            "rating": "4.50",
+            "image_url": "",
+            "image": ""
+        }
+    }
+]
