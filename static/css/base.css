@@ -101,6 +101,21 @@ body {
     border: 1px solid black !important;
 }
 
+.product-img-container {
+    margin-bottom: 0.5rem;
+    height: 30rem;
+    width: 100%;
+    overflow: hidden;
+}
+
+.product-img {
+    height: 200px;
+    max-width: 100%;
+}
+
+.card-body {
+    padding-top: 2rem;
+}
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
