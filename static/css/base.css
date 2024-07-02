@@ -102,7 +102,7 @@ body {
 }
 
 .product-img-container {
-    margin-bottom: 0.5rem;
+    margin: 0 !important;
     height: 30rem;
     width: 100%;
     overflow: hidden;
@@ -113,8 +113,9 @@ body {
     max-width: 100%;
 }
 
-.card-body {
-    padding-top: 2rem;
+.card {
+    width: 35rem;
+    margin: 0.5rem 0.5rem;
 }
 /* -------------------------------- Media Queries */
 
@@ -136,6 +137,24 @@ body {
     }
 
     .header-container {
-        padding-top: 164px;
+        padding-top: 14rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .products-container {
+        margin-top: 10rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 30rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .card {
+        width: 35rem;
     }
 }
