@@ -17,6 +17,8 @@ html {
 }
 
 body {
+    background: url('/media/hero-image.webp') no-repeat center center fixed;
+    background-size: cover;
     height: calc(100vh - 164px);
     color: var(--raisin-black);
     font-family: --var(--main-font);
@@ -116,6 +118,12 @@ body {
 .card {
     width: 35rem;
     margin: 0.5rem 0.5rem;
+    padding: 0;
+}
+
+.card-body {
+    margin: 0;
+    width: 100%;
 }
 /* -------------------------------- Media Queries */
 
