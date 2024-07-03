@@ -70,7 +70,7 @@
         "fields": {
             "category": 2,
             "name": "Alienware Gaming Laptop",
-            "sub_category": "laptop",
+            "sub_category": "intel",
             "description": "High performance gaming laptop suitable for most games.",
             "price": "1500.00",
             "image_url": "https://gamer-station.s3.eu-north-1.amazonaws.com/media/Alienware-laptop.jpg",
@@ -83,7 +83,7 @@
         "fields": {
             "category": 2,
             "name": "MSI Gaming Laptop",
-            "sub_category": "laptop",
+            "sub_category": "AMD",
             "description": "Budget-friendly gaming laptop with great performance.",
             "price": "800.00",
             "image_url": "https://gamer-station.s3.eu-north-1.amazonaws.com/media/msi-gaming-laptop.jpg",
