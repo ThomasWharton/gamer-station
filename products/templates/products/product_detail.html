@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="card col-lg-3 col-md-5 col-sm-8 col-xs-12">
+        <div class="row justify-content-center align-content-center product-img-container">
+            <img class="product-img object-fit-scale" src="{{ product.image_url }}" alt="Card image cap">
+        </div>                        
+        <div class="card-body bg-grey text-white">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text">{{ product.description }}</p>
+            <p class="card-text">£{{ product.price }}</p>
+            <p class="card-text"><i class="fas fa-star"></i> {{ product.rating }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

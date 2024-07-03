@@ -18,7 +18,9 @@
                 {% if product.category == category %}
                     <div class="card col-lg-3 col-md-5 col-sm-8 col-xs-12">
                         <div class="row justify-content-center align-content-center product-img-container">
-                            <img class="product-img object-fit-scale" src="{{ product.image_url }}" alt="Card image cap">
+                            <a href="{% url 'product_detail' product.id %}">
+                                <img class="product-img object-fit-scale" src="{{ product.image_url }}" alt="Card image cap">
+                            </a>                            
                         </div>                        
                         <div class="card-body bg-grey text-white">
                             <h5 class="card-title">{{ product.name }}</h5>

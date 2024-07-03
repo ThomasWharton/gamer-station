@@ -57,14 +57,14 @@ body {
 }
 
 .shop-now-button {
-    background: black;
-    color: white;
+    background: var(--raisin-black);
+    color: var(--white);
     min-width: 260px;
 }
 
 .btn-black {
-    background: black;
-    color: white;
+    background: var(--raisin-black);
+    color: var(--white);
 }
 
 .shop-now-button:hover,
@@ -73,8 +73,8 @@ body {
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
-    background: #222;
-    color: white;
+    background: var(--raisin-black);
+    color: var(--white);
 }
 
 .nav-link:hover {
