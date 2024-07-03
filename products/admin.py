@@ -8,12 +8,8 @@ class ProductAdmin(admin.ModelAdmin):
         'name',
         'category',
         'price',
-        'average_rating',
         'image',
     )
-
-    def average_rating(self, obj):
-        return obj.average_rating()
 
     ordering = ('name',)
 
