@@ -104,6 +104,10 @@ body {
     border: 1px solid black !important;
 }
 
+.category {
+    font-size: 4rem;
+}
+
 .product-img-container {
     margin: 0 !important;
     height: 30rem;
@@ -135,6 +139,10 @@ body {
 
 .card-body > a > h3:hover {
     color: var(--raisin-black);
+}
+
+.product-row {
+    margin-bottom: 1rem;
 }
 
 /* -------------------------------- Media Queries */

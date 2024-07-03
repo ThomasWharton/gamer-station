@@ -12,8 +12,8 @@
 {% block content %}
 <div class="container products-container">
     {% for category in categories %}
-        <h2 class="text-center">{{ category.friendly_name }}</h2>
-        <div class="row justify-content-center">
+        <h1 class="text-center text-uppercase category">{{ category.friendly_name }}</h2>
+        <div class="row justify-content-center product-row">
             {% for product in products %}
                 {% if product.category == category %}
                     <div class="card rounded-0 col-lg-3 col-md-5 col-sm-8 col-xs-12">
