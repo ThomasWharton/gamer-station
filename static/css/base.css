@@ -120,11 +120,21 @@ body {
     width: 40rem;
     margin: 0.5rem 0.5rem;
     padding: 0;
+    border: 2px solid var(--raisin-black);
 }
 
 .card-body {
     margin: 0;
     width: 100%;
+    border-top: 2px solid var(--raisin-black);
+}
+
+.card-body > a:hover {
+    text-decoration: none;
+}
+
+.card-body > a > h3:hover {
+    color: var(--raisin-black);
 }
 
 /* -------------------------------- Media Queries */

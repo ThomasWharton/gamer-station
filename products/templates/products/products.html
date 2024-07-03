@@ -16,7 +16,7 @@
         <div class="row justify-content-center">
             {% for product in products %}
                 {% if product.category == category %}
-                    <div class="card col-lg-3 col-md-5 col-sm-8 col-xs-12">
+                    <div class="card rounded-0 col-lg-3 col-md-5 col-sm-8 col-xs-12">
                         <div class="row justify-content-center align-content-center product-img-container">
                             {% if product.image %}
                                 <a href="{% url 'product_detail' product.id %}">
@@ -29,7 +29,9 @@
                             {% endif %}   
                         </div>                        
                         <div class="card-body bg-grey text-white">
-                            <h5 class="card-title">{{ product.name }}</h5>
+                            <a href="{% url 'product_detail' product.id %}" class="text-white">
+                                <h3 class="card-title">{{ product.name }}</h3>
+                            </a>                            
                             <p class="card-text">{{ product.description }}</p>
                             <p class="card-text">£{{ product.price }}</p>
                             <p class="card-text"><i class="fas fa-star"></i> {{ product.average_rating|default_if_none:"No ratings yet" }}</p>
