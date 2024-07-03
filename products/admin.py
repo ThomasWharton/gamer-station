@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Product, Category
+from .models import Product, Category, Review
 
 
 
@@ -8,9 +8,12 @@ class ProductAdmin(admin.ModelAdmin):
         'name',
         'category',
         'price',
-        'rating',
+        'average_rating',
         'image',
     )
+
+    def average_rating(self, obj):
+        return obj.average_rating()
 
     ordering = ('name',)
 
@@ -22,3 +25,4 @@ class CategoryAdmin(admin.ModelAdmin):
 
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Category, CategoryAdmin)
+admin.site.register(Review)

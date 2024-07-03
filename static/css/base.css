@@ -111,12 +111,12 @@ body {
 }
 
 .product-img {
-    height: 200px;
+    height: 20rem;
     max-width: 100%;
 }
 
 .card {
-    width: 35rem;
+    width: 40rem;
     margin: 0.5rem 0.5rem;
     padding: 0;
 }
@@ -125,6 +125,7 @@ body {
     margin: 0;
     width: 100%;
 }
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */

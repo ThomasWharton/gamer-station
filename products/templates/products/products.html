@@ -26,7 +26,7 @@
                             <h5 class="card-title">{{ product.name }}</h5>
                             <p class="card-text">{{ product.description }}</p>
                             <p class="card-text">£{{ product.price }}</p>
-                            <p class="card-text"><i class="fas fa-star"></i> {{ product.rating }}</p>
+                            <p class="card-text">Average Rating: {{ product.average_rating|default_if_none:"No ratings yet" }}</p>
                         </div>
                     </div>
                 {% endif %}
