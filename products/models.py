@@ -47,3 +47,6 @@ class Review(models.Model):
         ), null=True
     )
     review = models.TextField(max_length=2000, null=True, blank=True)
+
+    def __str__(self):
+        return f'{self.product.name} review {self.id}'
