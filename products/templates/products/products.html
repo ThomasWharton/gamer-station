@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load custom_filters %}
 
 {% block page_header %}
     <div class="container header-container">
@@ -12,35 +13,37 @@
 {% block content %}
 <div class="container products-container">
     {% for category in categories %}
-        <h1 class="text-center text-uppercase category">{{ category.friendly_name }}</h2>
-        <div class="row justify-content-center product-row">
-            {% for product in products %}
-                {% if product.category == category %}
-                    <div class="card rounded-0 col-lg-3 col-md-5 col-sm-8 col-xs-12">
-                        <div class="row justify-content-center align-content-center product-img-container">
-                            {% if product.image %}
-                                <a href="{% url 'product_detail' product.id %}">
-                                    <img class="product-img object-fit-scale" src="{{ product.image_url }}" alt="{{ product.name }}">
-                                </a>
-                            {% else %}
-                                <a href="{% url 'product_detail' product.id %}">
-                                    <img class="product-img object-fit-scale" src="https://gamer-station.s3.eu-north-1.amazonaws.com/media/noimage.png" alt="{{ product.name }}">
-                                </a>
-                            {% endif %}   
-                        </div>                        
-                        <div class="card-body bg-grey text-white">
-                            <a href="{% url 'product_detail' product.id %}" class="text-white">
-                                <h3 class="card-title">{{ product.name }}</h3>
-                            </a>                            
-                            <p class="card-text">{{ product.description }}</p>
-                            <p class="card-text">£{{ product.price }}</p>
-                            <p class="card-text"><i class="fas fa-star"></i> {{ product.average_rating|default_if_none:"No ratings yet" }}</p>
-                            <p class="card-text">Reviews: {{ product.review_count }}</p>
+        {% with category_products=products|filter_by_category:category %}
+            {% if category_products %}
+                <h1 class="text-center text-uppercase category">{{ category.friendly_name }}</h1>
+                <div class="row justify-content-center product-row">
+                    {% for product in category_products %}
+                        <div class="card rounded-0 col-lg-3 col-md-5 col-sm-8 col-xs-12">
+                            <div class="row justify-content-center align-content-center product-img-container">
+                                {% if product.image %}
+                                    <a href="{% url 'product_detail' product.id %}">
+                                        <img class="product-img object-fit-scale" src="{{ product.image_url }}" alt="{{ product.name }}">
+                                    </a>
+                                {% else %}
+                                    <a href="{% url 'product_detail' product.id %}">
+                                        <img class="product-img object-fit-scale" src="https://gamer-station.s3.eu-north-1.amazonaws.com/media/noimage.png" alt="{{ product.name }}">
+                                    </a>
+                                {% endif %}   
+                            </div>                        
+                            <div class="card-body bg-grey text-white">
+                                <a href="{% url 'product_detail' product.id %}" class="text-white">
+                                    <h3 class="card-title">{{ product.name }}</h3>
+                                </a>                            
+                                <p class="card-text">{{ product.description }}</p>
+                                <p class="card-text">£{{ product.price }}</p>
+                                <p class="card-text"><i class="fas fa-star"></i> {{ product.average_rating|default_if_none:"No ratings yet" }}</p>
+                                <p class="card-text">Reviews: {{ product.review_count }}</p>
+                            </div>
                         </div>
-                    </div>
-                {% endif %}
-            {% endfor %}
-        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
     {% endfor %}
 </div>
 {% endblock %}
