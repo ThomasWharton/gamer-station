@@ -177,12 +177,6 @@ body {
 
 @media (max-width: 768px) {
     .card {
-        width: 30rem;
-    }
-}
-
-@media (max-width: 576px) {
-    .card {
         width: 35rem;
     }
 }

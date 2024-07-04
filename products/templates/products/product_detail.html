@@ -10,10 +10,18 @@
 {% endblock %}
 
 {% block content %}
-<div class="container">
-    <div class="card col-lg-3 col-md-5 col-sm-8 col-xs-12">
+<div class="container products-container">
+    <div class="card col">
         <div class="row justify-content-center align-content-center product-img-container">
-            <img class="product-img object-fit-scale" src="{{ product.image_url }}" alt="Card image cap">
+            {% if product.image %}
+                <a href="{% url 'product_detail' product.id %}">
+                    <img class="product-img object-fit-scale" src="{{ product.image_url }}" alt="{{ product.name }}">
+                </a>
+            {% else %}
+                <a href="{% url 'product_detail' product.id %}">
+                    <img class="product-img object-fit-scale" src="https://gamer-station.s3.eu-north-1.amazonaws.com/media/noimage.png" alt="{{ product.name }}">
+                </a>
+            {% endif %}
         </div>                        
         <div class="card-body bg-grey text-white">
             <h5 class="card-title">{{ product.name }}</h5>
