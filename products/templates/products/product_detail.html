@@ -14,17 +14,13 @@
     <div class="card col">
         <div class="row justify-content-center align-content-center product-img-container">
             {% if product.image %}
-                <a href="{% url 'product_detail' product.id %}">
-                    <img class="product-img object-fit-scale" src="{{ product.image_url }}" alt="{{ product.name }}">
-                </a>
+                <img class="product-img object-fit-scale" src="{{ product.image_url }}" alt="{{ product.name }}">
             {% else %}
-                <a href="{% url 'product_detail' product.id %}">
-                    <img class="product-img object-fit-scale" src="https://gamer-station.s3.eu-north-1.amazonaws.com/media/noimage.png" alt="{{ product.name }}">
-                </a>
+                <img class="product-img object-fit-scale" src="https://gamer-station.s3.eu-north-1.amazonaws.com/media/noimage.png" alt="{{ product.name }}">
             {% endif %}
         </div>                        
         <div class="card-body bg-grey text-white">
-            <h5 class="card-title">{{ product.name }}</h5>
+            <h3 class="card-title">{{ product.name }}</h3>
             <p class="card-text">{{ product.description }}</p>
             <p class="card-text">£{{ product.price }}</p>
             <p class="card-text"><i class="fas fa-star"></i> {{ average_rating|default:"No ratings yet" }}</p>
