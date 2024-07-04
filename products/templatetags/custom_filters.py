@@ -1,5 +1,10 @@
 from django import template
 
+"""
+Custom filtering to ensure category heading
+on products template does not appear if
+no products visible within that category
+"""
 register = template.Library()
 
 @register.filter

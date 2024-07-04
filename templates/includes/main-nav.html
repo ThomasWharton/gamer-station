@@ -10,11 +10,9 @@
                 PC Systems
             </a>
             <div class="dropdown-menu border-0 bg-grey" aria-labelledby="pc-systems-link">
-                <a href="" class="dropdown-item">By Price</a>
-                <a href="" class="dropdown-item">By Rating</a>
-                <a href="" class="dropdown-item">AMD</a>
-                <a href="" class="dropdown-item">Intel</a>
-                <a href="" class="dropdown-item">All PC Systems</a>
+                <a href="{% url 'products' %}?category=pc-systems&sub_category=AMD" class="dropdown-item">AMD</a>
+                <a href="{% url 'products' %}?category=pc-systems&sub_category=intel" class="dropdown-item">Intel</a>
+                <a href="{% url 'products' %}?category=pc-systems" class="dropdown-item">All PC Systems</a>
             </div>
         </li>
         <li class="nav-item dropdown">
@@ -22,11 +20,9 @@
                 Laptops
             </a>
             <div class="dropdown-menu border-0 bg-grey" aria-labelledby="laptops-link">
-                <a href="" class="dropdown-item">By Price</a>
-                <a href="" class="dropdown-item">By Rating</a>
-                <a href="" class="dropdown-item">AMD</a>
-                <a href="" class="dropdown-item">Intel</a>
-                <a href="" class="dropdown-item">All Laptops</a>
+                <a href="{% url 'products' %}?category=laptops&sub_category=AMD" class="dropdown-item">AMD</a>
+                <a href="{% url 'products' %}?category=laptops&sub_category=intel" class="dropdown-item">Intel</a>
+                <a href="{% url 'products' %}?category=laptops" class="dropdown-item">All Laptops</a>
             </div>
         </li>
         <li class="nav-item dropdown">
@@ -34,14 +30,14 @@
                 PC Components
             </a>
             <div class="dropdown-menu border-0 bg-grey" aria-labelledby="pc-components-link">
-                <a href="" class="dropdown-item">Processors</a>
-                <a href="" class="dropdown-item">Motherboards</a>
-                <a href="" class="dropdown-item">GPUs</a>
-                <a href="" class="dropdown-item">Memory</a>
-                <a href="" class="dropdown-item">Storage</a>
-                <a href="" class="dropdown-item">Power Supplies</a>
-                <a href="" class="dropdown-item">Cooling</a>
-                <a href="" class="dropdown-item">All PC Components</a>
+                <a href="{% url 'products' %}?category=pc-components&sub_category=processor" class="dropdown-item">Processors</a>
+                <a href="{% url 'products' %}?category=pc-components&sub_category=motherboard" class="dropdown-item">Motherboards</a>
+                <a href="{% url 'products' %}?category=pc-components&sub_category=GPU" class="dropdown-item">GPUs</a>
+                <a href="{% url 'products' %}?category=pc-components&sub_category=RAM" class="dropdown-item">Memory</a>
+                <a href="{% url 'products' %}?category=pc-components&sub_category=storage" class="dropdown-item">Storage</a>
+                <a href="{% url 'products' %}?category=pc-components&sub_category=PSU" class="dropdown-item">Power Supplies</a>
+                <a href="{% url 'products' %}?category=pc-components&sub_category=cooler" class="dropdown-item">Cooling</a>
+                <a href="{% url 'products' %}?category=pc-components" class="dropdown-item">All PC Components</a>
             </div>
         </li>
         <li class="nav-item dropdown">
@@ -49,11 +45,11 @@
                 Peripherals
             </a>
             <div class="dropdown-menu border-0 bg-grey" aria-labelledby="peripherals-link">
-                <a href="" class="dropdown-item">Mice</a>
-                <a href="" class="dropdown-item">Keyboards</a>
-                <a href="" class="dropdown-item">Mousemats</a>
-                <a href="" class="dropdown-item">Headsets</a>
-                <a href="" class="dropdown-item">All Peripherals</a>
+                <a href="{% url 'products' %}?category=peripherals&sub_category=mouse" class="dropdown-item">Mice</a>
+                <a href="{% url 'products' %}?category=peripherals&sub_category=keyboard" class="dropdown-item">Keyboards</a>
+                <a href="{% url 'products' %}?category=peripherals&sub_category=mousemat" class="dropdown-item">Mousemats</a>
+                <a href="{% url 'products' %}?category=peripherals&sub_category=headset" class="dropdown-item">Headsets</a>
+                <a href="{% url 'products' %}?category=peripherals" class="dropdown-item">All Peripherals</a>
             </div>
         </li>
     </ul>
