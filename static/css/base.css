@@ -153,6 +153,10 @@ body {
     margin-bottom: 1rem;
 }
 
+.nav-link > div:hover {
+    color: var(--raisin-black) !important;
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
