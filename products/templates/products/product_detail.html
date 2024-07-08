@@ -28,7 +28,7 @@
                 <p class="card-text">Reviews: {{ product.review_count }}</p>
             </div>
         </div>
-        <form action="" method="POST" class="form text-center">
+        <form action="{% url 'add_to_cart' product.id %}" method="POST" class="form text-center">
             {% csrf_token %}
             <div class="form-row text-center">
                 <div class="col-12 quantity-col">
