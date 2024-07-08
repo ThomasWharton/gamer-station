@@ -71,6 +71,11 @@ body {
     color: var(--white);
 }
 
+.btn-white {
+    background: var(--white);
+    color: var(--raisin-black);
+}
+
 .shop-now-button:hover,
 .shop-now-button:active,
 .shop-now-button:focus,
@@ -139,6 +144,14 @@ body {
     border: 2px solid var(--raisin-black);
 }
 
+.product-detail-card {
+    max-width: 40rem;
+}
+
+.product-detail-row {
+    gap: 2rem;
+}
+
 .card-body {
     margin: 0;
     width: 100%;
@@ -159,6 +172,27 @@ body {
 
 .nav-link > div:hover {
     color: var(--raisin-black) !important;
+}
+
+.product-detail-btn {
+    font-weight: bold;
+    font-size: 1.2rem;
+    width: 15rem;
+}
+
+.product-detail-btn-col {
+    margin: 0;
+    gap: 1rem;
+}
+
+.quantity-col {
+    max-width: 31.7rem;
+    margin: 0 auto;
+}
+
+.product-form-label {
+    text-align: left !important;
+    font-size: 2rem;
 }
 
 /* -------------------------------- Media Queries */
@@ -194,6 +228,10 @@ body {
 @media (max-width: 768px) {
     .card {
         width: 35rem;
+    }
+
+    .product-detail-row {
+        flex-direction: column !important;
     }
 }
 
