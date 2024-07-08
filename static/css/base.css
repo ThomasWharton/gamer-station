@@ -240,3 +240,13 @@ body {
         font-size: 2.5rem;
     }
 }
+
+@media (max-width: 576px) {
+    .card {
+        width: 25rem;
+    }
+
+    .form {
+        width: 25rem;
+    }
+}
