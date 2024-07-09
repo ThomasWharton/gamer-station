@@ -96,10 +96,15 @@ body {
     outline: 5px auto var(--battleship-grey);
 }
 
-.nav-link:hover,
-.nav-link:hover > h2 {
+.nav-link:hover {
     color: var(--raisin-black) !important;
 }
+
+.nav-link:hover > h2 {
+    color: var(--raisin-black) !important;
+    -webkit-text-stroke: 1px var(--white);
+}
+
 
 .dropdown-item:hover {
     background-color: var(--raisin-black) !important;
@@ -208,7 +213,7 @@ body {
 
 .product-img-cart {
     height: 10rem;
-    max-width: 100%;
+    max-width: 80%;
 }
 
 .cart-product-name {
