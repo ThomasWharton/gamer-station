@@ -33,7 +33,7 @@ class Product(models.Model):
     def average_rating(self):
         reviews = self.reviews.all()
         if reviews.exists():
-            return reviews.aggregate(Avg('rating')['rating__avg'])
+            return reviews.aggregate(Avg('rating'))['rating__avg']
         return None
 
     def review_count(self):
