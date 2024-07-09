@@ -197,6 +197,15 @@ body {
     font-size: 2rem;
 }
 
+.cart-product-card,
+.cart-product-block {
+    width: 25rem;
+}
+
+.cart-product-img {
+    height: 25rem;
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */

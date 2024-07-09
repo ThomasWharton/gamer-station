@@ -10,7 +10,7 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container mt-2 mb-2">
+    <div class="container mt-2 mb-2 text-center">
         <div class="row cart-row">
             <div class="col">
                 <hr>
@@ -27,7 +27,7 @@
                             <thead class="text-black">
                                 <tr>
                                     <th scope="col">Product Info</th>
-                                    <th scope="col"></th>
+                                    <!-- <th scope="col"></th> -->
                                     <th scope="col">Price</th>
                                     <th scope="col">Qty</th>
                                     <th scope="col">Subtotal</th>
@@ -36,19 +36,26 @@
 
                             {% for item in cart_items %}
                                 <tr>
-                                    <td class="p-3 w-25">
-                                        <img src="{{ item.product.image_url }}" alt="{{ item.product.name }}" class="img-fluid rounded">
-                                    </td>
-                                    <td class="py-3">
-                                        <p class="my-0"><strong>{{ item.product.name }}</strong></p>
-                                    </td>
-                                    <td class="py-3">
-                                        <p class="my-0">{{ item.quantity }}</p>
+                                    <td class="p-3 cart-product-block">
+                                        <div class="card rounded-0 cart-product-card">
+                                            <div class="row justify-content-center align-content-center cart-product-img">
+                                                {% if item.product.image %}
+                                                    <img class="product-img object-fit-scale" src="{{ item.product.image_url }}" alt="{{ product.name }}">
+                                                {% else %}
+                                                    <img class="product-img object-fit-scale" src="https://gamer-station.s3.eu-north-1.amazonaws.com/media/noimage.png" alt="{{ product.name }}">
+                                                {% endif %}
+                                            </div>                        
+                                            <div class="card-body bg-grey text-white">
+                                                <h3 class="card-title">{{ item.product.name }}</h3>
+                                            </div>
+                                        </div>
                                     </td>
                                     <td class="py-3">
                                         <p class="my-0">{{ item.product.price }}</p>
                                     </td>
-
+                                    <td class="py-3">
+                                        <p class="my-0">{{ item.quantity }}</p>
+                                    </td>
                                 </tr>
                             {% endfor %}
                         </table>
