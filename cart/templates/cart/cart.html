@@ -40,13 +40,13 @@
                                         <div class="card rounded-0 cart-product-card">
                                             <div class="row justify-content-center align-content-center cart-product-img">
                                                 {% if item.product.image %}
-                                                    <img class="product-img object-fit-scale" src="{{ item.product.image_url }}" alt="{{ product.name }}">
+                                                    <img class="product-img-cart object-fit-scale" src="{{ item.product.image_url }}" alt="{{ product.name }}">
                                                 {% else %}
-                                                    <img class="product-img object-fit-scale" src="https://gamer-station.s3.eu-north-1.amazonaws.com/media/noimage.png" alt="{{ product.name }}">
+                                                    <img class="product-img-cart object-fit-scale" src="https://gamer-station.s3.eu-north-1.amazonaws.com/media/noimage.png" alt="{{ product.name }}">
                                                 {% endif %}
                                             </div>                        
                                             <div class="card-body bg-grey text-white">
-                                                <h3 class="card-title">{{ item.product.name }}</h3>
+                                                <p class="card-title cart-product-name">{{ item.product.name }}</p>
                                             </div>
                                         </div>
                                     </td>
@@ -58,6 +58,34 @@
                                     </td>
                                 </tr>
                             {% endfor %}
+                            <tr>
+                                <td colspan="5" class="pt-5 text-right">
+                                    <h2><strong>Cart Total: ${{ total|floatformat:2 }}</strong></h2>
+                                    <h2>Delivery: ${{ delivery|floatformat:2 }}</h2>
+                                    <h1 class="mt-4"><strong>Grand Total: ${{ grand_total|floatformat:2 }}</strong></h1>
+                                    {% if free_delivery_delta > 0 %}
+                                        <p class="mb-1 text-danger">
+                                            You could get free delivery by spending just <strong>${{ free_delivery_delta }}</strong> more!
+                                        </p>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="5" class="text-right">
+                                    <a href="{% url 'products' %}" class="btn btn-white rounded-0 btn-lg">
+                                        <span class="icon">
+                                            <i class="fas fa-chevron-left"></i>
+                                        </span>
+                                        <span class="text-uppercase">Keep Shopping</span>
+                                    </a>
+                                    <a href="" class="btn btn-black rounded-0 btn-lg">
+                                        <span class="text-uppercase">Secure Checkout</span>
+                                        <span class="icon">
+                                            <i class="fas fa-lock"></i>
+                                        </span>
+                                    </a>
+                                </td>
+                            </tr>
                         </table>
                     </div>
                 {% else %}

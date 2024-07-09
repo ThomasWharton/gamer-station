@@ -199,11 +199,20 @@ body {
 
 .cart-product-card,
 .cart-product-block {
-    width: 25rem;
+    width: 15rem;
 }
 
 .cart-product-img {
-    height: 25rem;
+    height: 15rem;
+}
+
+.product-img-cart {
+    height: 10rem;
+    max-width: 100%;
+}
+
+.cart-product-name {
+    font-size: 1.2rem;
 }
 
 /* -------------------------------- Media Queries */
