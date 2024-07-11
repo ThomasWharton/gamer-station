@@ -34,7 +34,7 @@
                             </thead>
 
                             {% for item in cart_items %}
-                                <tr>
+                                <tr class="cart-table-row">
                                     <td class="p-3 cart-product-block">
                                         <div class="card rounded-0 cart-product-card">
                                             <div class="row justify-content-center align-content-center cart-product-img">
@@ -54,6 +54,9 @@
                                     </td>
                                     <td class="py-3">
                                         <p class="my-0">{{ item.quantity }}</p>
+                                    </td>
+                                    <td class="py-3">
+                                        <p class="my-0">{{ item.product.price }}</p>
                                     </td>
                                 </tr>
                             {% endfor %}

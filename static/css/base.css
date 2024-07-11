@@ -239,6 +239,10 @@ body {
     font-size: 1.2rem;
 }
 
+.cart-table-row {
+    font-weight: 800;
+}
+
 /* Media Queries */
 
 /* Slightly larger container on xl screens */
