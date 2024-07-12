@@ -221,6 +221,9 @@ body {
 
 /* Cart */
 
+.bg-transparent-grey {
+    background-color: rgba(135, 142, 141, 0.5)
+}
 .cart-product-card,
 .cart-product-block {
     width: 15rem;
