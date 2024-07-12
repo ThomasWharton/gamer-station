@@ -243,6 +243,13 @@ body {
     font-weight: 800;
 }
 
+.qty_input {
+    max-width: 6rem;
+}
+
+.qty-form-row {
+    gap: 1rem;
+}
 /* Media Queries */
 
 /* Slightly larger container on xl screens */
