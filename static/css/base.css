@@ -40,6 +40,10 @@ body {
     background-color: var(--raisin-black);
 }
 
+.bg-transparent-grey {
+    background-color: rgba(135, 142, 141, 0.5)
+}
+
 .btn-black {
     background: var(--raisin-black);
     color: var(--white);
@@ -221,9 +225,10 @@ body {
 
 /* Cart */
 
-.bg-transparent-grey {
-    background-color: rgba(135, 142, 141, 0.5)
+.cart-heading {
+    font-size: 3rem;
 }
+
 .cart-product-card,
 .cart-product-block {
     width: 15rem;
@@ -253,6 +258,20 @@ body {
 .qty-form-row {
     gap: 1rem;
 }
+
+.table td {
+    vertical-align: middle !important;
+}
+
+.qty-form-input {
+    height: 2.5rem;
+}
+
+.cart-qty-input {
+    height: 2.5rem;
+    font-size: 1.2rem;
+}
+
 /* Media Queries */
 
 /* Slightly larger container on xl screens */

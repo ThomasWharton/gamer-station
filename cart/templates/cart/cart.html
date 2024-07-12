@@ -11,16 +11,16 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container mt-2 mb-2 text-center">
+    <div class="container mt-2 mb-2 text-center bg-transparent-grey">
         <div class="row cart-row">
             <div class="col">
                 <hr>
-                <h2 class="logo-font mb-4 text-uppercase">Shopping Cart</h2>
+                <h2 class="logo-font mb-4 text-uppercase cart-heading">Shopping Cart</h2>
                 <hr>
             </div>
         </div>
 
-        <div class="row bg-transparent-grey pb-2">
+        <div class="row pb-2">
             <div class="col">
                 {% if cart_items %}
                     <div class="table-responsive rounded">
