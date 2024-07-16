@@ -76,6 +76,12 @@ body {
     border: 1px solid black !important;
 }
 
+.btt-link,
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
+
 /* from Bulma */
 .icon {
     align-items: center;
