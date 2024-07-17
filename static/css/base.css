@@ -82,6 +82,24 @@ body {
     cursor: pointer;
 }
 
+/* bootstrap toasts */
+
+.message-container {
+    position: fixed;
+    top: 135px;
+    right: 5px;
+    z-index: 999999999;
+}
+
+.custom-toast {
+    overflow: visible;
+    font-size: 1.2rem;
+}
+
+.toast-capper {
+    height: 5px;
+}
+
 /* from Bulma */
 .icon {
     align-items: center;
