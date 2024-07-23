@@ -10,7 +10,7 @@ def view_cart(request):
 
 
 def add_to_cart(request, item_id):
-    """Add a quanitity of the specified product to the shopping bag"""
+    """Add a quanitity of the specified product to the shopping cart"""
 
     product = Product.objects.get(pk=item_id)
     quantity = int(request.POST.get('quantity'))
@@ -19,9 +19,10 @@ def add_to_cart(request, item_id):
 
     if item_id in list(cart.keys()):
         cart[item_id] += quantity
+        messages.success(request, f'Adjusted {product.name} quantity in your cart')
     else:
         cart[item_id] = quantity
-        messages.success(request, f'Added {product.name} to your bag')
+        messages.success(request, f'Added {product.name} to your cart')
 
     request.session['cart'] = cart
     return redirect(redirect_url)
@@ -30,14 +31,17 @@ def add_to_cart(request, item_id):
 def adjust_cart(request, item_id):
     """Adjust the quantity of the specified product to the specified amount"""
 
+    product = Product.objects.get(pk=item_id)
     quantity = int(request.POST.get('quantity'))
     cart = request.session.get('cart', {})
     print(quantity)
     
     if quantity > 0:
         cart[item_id] = quantity
+        messages.success(request, f'Adjusted {product.name} quantity in your cart')
     else:
         del cart[item_id]
+        messages.success(request, f'Removed {product.name} from your cart')
 
     request.session['cart'] = cart
     return redirect(reverse('view_cart'))
@@ -46,9 +50,12 @@ def adjust_cart(request, item_id):
 def remove_from_cart(request, item_id):
     """A view to remove items from cart"""
 
+    product = Product.objects.get(pk=item_id)
+
     try:
         cart = request.session.get('cart', {})
         cart.pop(item_id)
+        messages.success(request, f'Removed {product.name} from your cart')
 
         request.session['cart'] = cart
         return HttpResponse(status=200)
