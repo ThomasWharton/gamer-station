@@ -22,9 +22,9 @@
                         <div class="row mb-2">
                             <div class="col-3 my-1">
                                 {% if item.product.image %}
-                                    <img class="w-100 object-fit-scale toast-img-border" src="{{ item.product.image_url }}" alt="{{ product.name }}">
+                                    <img class="w-100 object-fit-scale img-border" src="{{ item.product.image_url }}" alt="{{ product.name }}">
                                 {% else %}
-                                    <img class="w-100 object-fit-scale toast-img-border" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                                    <img class="w-100 object-fit-scale img-border" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                                 {% endif %}
                             </div>
                             <div class="col-9">
