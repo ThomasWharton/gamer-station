@@ -82,6 +82,10 @@ body {
     cursor: pointer;
 }
 
+.rounded-10 {
+    border-radius: 1rem;
+}
+
 /* bootstrap toasts */
 
 .message-container {
