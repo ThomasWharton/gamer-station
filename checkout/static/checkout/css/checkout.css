@@ -37,6 +37,10 @@
     border-radius: 0.5rem;
 }
 
+#payment-form input {
+    font-size: 1.6rem;
+}
+
 select,
 select option {
     color: var(--raisin-black);
