@@ -18,7 +18,7 @@
     <div class="container bg-transparent-grey">
         <div class="row cart-row">
             <div class="col">
-                <h2 class="logo-font m-4 text-uppercase cart-heading">Checkout</h2>
+                <h2 class="logo-font m-4 text-uppercase text-center cart-heading">Checkout</h2>
             </div>
         </div>
 
@@ -26,10 +26,10 @@
             <div class="col-12 col-lg-6 order-lg-last mb-5">
                 <div class="row">
                     <div class="col-7 offset-2">
-                        <p class="mb-1 mt-0 small text-muted">Item</p>
+                        <p class="mb-1 mt-0 small">Item</p>
                     </div>
                     <div class="col-3 text-right">
-                        <p class="mb-1 mt-0 small text-muted">Subtotal</p>
+                        <p class="mb-1 mt-0 small">Subtotal</p>
                     </div>
                 </div>
                 {% for item in cart_items %}
@@ -45,16 +45,16 @@
                         </div>
                         <div class="col-7">
                             <p class="my-0"><strong>{{ item.product.name }}</strong></p>
-                            <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
+                            <p class="my-0 small">Qty: {{ item.quantity }}</p>
                         </div>
                         <div class="col-3 text-right">
-                            <p class="my-0 small text-muted">${{ item.product.price | calc_subtotal:item.quantity }}</p>
+                            <p class="my-0 small">${{ item.product.price | calc_subtotal:item.quantity }}</p>
                         </div>
                     </div>
                 {% endfor %}
             </div>
             <div class="col-12 col-lg-6">
-                <p class="text-muted">Please fill out the form below to complete your order</p>
+                <p class="text-muted ml-4">Please fill out the form below to complete your order</p>
                 <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                     {% csrf_token %}
                     <fieldset class="rounded px-3 mb-5">
@@ -106,7 +106,7 @@
                             <span class="icon">
                                 <i class="fas fa-exclamation-circle"></i>
                             </span>
-                            <span>Your card will be charged <strong>100 million dollars</strong> <img style="height: 50px" src="https://gamer-station.s3.eu-north-1.amazonaws.com/media/Drevil_million_dollars.jpg" alt="dr evil"></span>
+                            <span>Your card will be charged <strong>100 million dollars</strong> <img style="height: 50px" src="{{ MEDIA_URL }}Drevil_million_dollars.jpg" alt="dr evil"></span>
                         </button>
                     </div>
                 </form>
