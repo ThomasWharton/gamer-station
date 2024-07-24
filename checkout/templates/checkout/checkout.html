@@ -15,7 +15,7 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container bg-transparent-grey rounded-10">
+    <div class="container bg-transparent-grey rounded-10 mb-2">
         <div class="row cart-row">
             <div class="col">
                 <h2 class="logo-font m-4 text-uppercase text-center cart-heading">Checkout</h2>
@@ -111,17 +111,22 @@
                     <div class="submit-button text-right mt-5 mb-2">
                         <a href="{% url 'view_cart' %}" class="btn btn-white rounded-0">
                             <span class="icon">
-                                <i class="fas fas-chevron-left"></i>
+                                <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="font-weight-bold">Adjust Bag</span>
                         </a>
                         <button id="submit-button" class="btn btn-black rounded-0">
                             <span class="font-weight-bold">Complete Order</span>
                             <span class="icon">
+                                <i class="fas fa-lock"></i>
+                            </span>
+                        </button>
+                        <p class="small text-danger my-0">
+                            <span class="icon">
                                 <i class="fas fa-exclamation-circle"></i>
                             </span>
                             <span>Your card will be charged <strong>100 million dollars</strong> <img style="height: 50px" src="{{ MEDIA_URL }}Drevil_million_dollars.jpg" alt="dr evil"></span>
-                        </button>
+                        </p>
                     </div>
                 </form>
             </div>
