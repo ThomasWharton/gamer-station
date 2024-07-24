@@ -41,8 +41,8 @@
                             <span class="float-right">£{{ total|floatformat:2 }}</span>
                         </p></strong>
                         {% if free_delivery_delta > 0 %}
-                            <p class="mb-0 p-2 text-danger text-uppercase text-center font-weight-bold">
-                                Spend <strong>£{{ free_delivery_delta }}</strong> more to get free delivery!
+                            <p class="mb-0 p-2 text-white text-uppercase text-center font-weight-bold">
+                                Spend <span class="text-danger"><strong>£{{ free_delivery_delta }}</strong></span> more to get free delivery!
                             </p>
                         {% endif %}
                         <a href="{% url 'checkout' %}" class="btn btn-black btn-block rounded-0">
