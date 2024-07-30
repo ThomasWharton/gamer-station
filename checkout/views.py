@@ -20,12 +20,9 @@ def cache_checkout_data(request):
         metadata = {
             'cart': json.dumps(request.session.get('cart', {})),
             'save_info': request.POST.get('save_info'),
-            'username': request.user.username,  # Ensure only username is passed
+            'username': request.user.username,
         }
         stripe.PaymentIntent.modify(pid, metadata=metadata)
-        
-        # Log the metadata for debugging
-        print(f"Metadata set for PaymentIntent {pid}: {metadata}")
 
         return HttpResponse(status=200)
     except Exception as e:
@@ -54,7 +51,11 @@ def checkout(request):
         order_form = OrderForm(form_data)
         
         if order_form.is_valid():
-            order = order_form.save()
+            order = order_form.save(commit=False)
+            pid = request.POST.get('client_secret').split('_secret')[0]
+            order.stripe_pid = pid
+            order.original_cart = json.dumps(cart)
+            order.save()
             for item_id, item_data in cart.items():
                 try:
                     product = Product.objects.get(id=item_id)

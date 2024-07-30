@@ -30,9 +30,7 @@ class StripeWH_Handler:
         intent = event.data.object
         pid = intent.id
         
-        # Check if metadata and cart are present
         metadata = getattr(intent, 'metadata', {})
-
         cart = metadata.get('cart')
         save_info = metadata.get('save_info')
         username = metadata.get('username')

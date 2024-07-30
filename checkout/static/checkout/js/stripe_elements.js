@@ -112,7 +112,6 @@ form.addEventListener('submit', function(ev) {
             }
         });
     }).fail(function () {
-        console.log("POST request failed");
         location.reload();
     });
 });
