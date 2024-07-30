@@ -5,7 +5,6 @@
     CSS from here: 
     https://stripe.com/docs/stripe-js
 */
-
 var stripePublicKey = $('#id_stripe_public_key').text().slice(1, -1);
 var clientSecret = $('#id_client_secret').text().slice(1, -1);
 var stripe = Stripe(stripePublicKey);
@@ -49,13 +48,13 @@ var form = document.getElementById('payment-form');
 
 form.addEventListener('submit', function(ev) {
     ev.preventDefault();
+    console.log("Form submitted");
     card.update({ 'disabled': true });
     $('#submit-button').attr('disabled', true);
     $('#payment-form').fadeToggle(100);
     $('#loading-overlay').fadeToggle(100);
 
     var saveInfo = Boolean($('#id-save-info').prop('checked'));
-    // From using {% csrf_token %} in the form
     var csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
     var postData = {
         'csrfmiddlewaretoken': csrfToken,
@@ -113,7 +112,7 @@ form.addEventListener('submit', function(ev) {
             }
         });
     }).fail(function () {
-        // Just reload the page, the error will be in django messages
+        console.log("POST request failed");
         location.reload();
-    })
+    });
 });
