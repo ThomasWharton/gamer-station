@@ -362,6 +362,40 @@ body {
     font-size: 1.2rem;
 }
 
+/* Sign Up Form */
+
+.signup > div {
+    max-width: 35rem;
+    text-align: left;
+}
+
+.signup {
+    width: 35rem;
+}
+
+.form-container {
+    max-width: 50rem;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+.form-control {
+    font-size: 1.6rem !important;
+}
+
+/* Sign In Form */
+
+.login {
+    width: 35rem;
+}
+
+.login > div {
+    max-width: 35rem;
+    text-align: left;
+}
+
+
+
 /* Media Queries */
 
 /* Slightly larger container on xl screens */
