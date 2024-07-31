@@ -394,7 +394,11 @@ body {
     text-align: left;
 }
 
+/* Logout Form */
 
+.gap-1 {
+    gap: 1rem;
+}
 
 /* Media Queries */
 
