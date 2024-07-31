@@ -44,6 +44,8 @@
 select,
 select option {
     color: var(--raisin-black);
+    font-size: 1.6rem !important;
+    height: 4.3rem !important;
 }
 
 select:invalid,
