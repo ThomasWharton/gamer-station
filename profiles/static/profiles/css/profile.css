@@ -1,10 +1,27 @@
+select,
+select option {
+    font-size: 1.6rem !important;
+    height: 4.3rem !important;
+}
+
+.order-history {
+    max-height: 416px;
+    overflow-y: auto;
+}
+
+#profile-update-form .form-control {
+    color: #000;
+}
+
 #profile-update-form input::placeholder {
     color: #aab7c4;
 }
 
-select,
-select option {
-    color: var(--raisin-black);
-    font-size: 1.6rem !important;
-    height: 4.3rem !important;
+#id_default_country,
+#id_default_country option:not(:first-child) {
+    color: #000;
+}
+
+#id_default_country option:first-child {
+    color: #aab7c4;
 }
