@@ -26,6 +26,12 @@
                 <p class="card-text">£{{ product.price }}</p>
                 <p class="card-text"><i class="fas fa-star"></i> {{ average_rating|default:"No ratings yet" }}</p>
                 <p class="card-text">Reviews: {{ product.review_count }}</p>
+                {% if request.user.is_superuser %}
+                <div class="row ml-1">
+                    <a href="{% url 'edit_product' product.id %}" class="btn btn-white mr-2 text-uppercase font-weight-bold rounded-0">Edit</a>
+                    <a href="{% url 'delete_product' product.id %}" class="btn btn-black text-uppercase font-weight-bold rounded-0">Delete</a>
+                </div>
+                {% endif %}
             </div>
         </div>
         <form action="{% url 'add_to_cart' product.id %}" method="POST" class="form text-center">
@@ -79,7 +85,7 @@
                     </a>
                     <input type="submit" value="Add to Cart" class="btn product-detail-btn btn-white rounded-0 text-uppercase mt-5">
                 </div>
-                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                <input type="hidden" name="redirect_url" value="{{ request.path }}">                    
             </div>
         </form>
     </div>
