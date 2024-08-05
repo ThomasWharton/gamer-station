@@ -1,6 +1,6 @@
 from django import forms
-from .widgets import CustomClearableFileInput
-from .models import Product, Category
+from .widgets import CustomClearableFileInput, StarRadioSelect
+from .models import Product, Category, Review
 
 
 class ProductForm(forms.ModelForm):
@@ -19,3 +19,28 @@ class ProductForm(forms.ModelForm):
         self.fields['category'].choices = friendly_names
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'border-black rounded-0'
+
+
+class ReviewForm(forms.ModelForm):
+
+    RATING_CHOICES = [
+        (1, ''),
+        (2, ''),
+        (3, ''),
+        (4, ''),
+        (5, ''),
+    ]
+
+    rating = forms.ChoiceField(
+        choices=RATING_CHOICES,
+        widget=StarRadioSelect,
+        label='Rating',
+    )
+
+    class Meta:
+        model = Review
+        fields = '__all__'
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
