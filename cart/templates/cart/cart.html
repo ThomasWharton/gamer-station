@@ -11,7 +11,7 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container mt-2 mb-2 text-center bg-transparent-grey rounded-10">
+    <div class="container mt-2 mb-2 text-center bg-transparent-grey rounded-10 cart-container">
         <div class="row cart-row">
             <div class="col">
                 <h2 class="logo-font m-4 text-uppercase cart-heading">Shopping Cart</h2>
@@ -21,7 +21,36 @@
         <div class="row pb-2">
             <div class="col">
                 {% if cart_items %}
-                    <div class="table-responsive rounded">
+                    <div class="d-block d-md-none">
+                        <div class="row">
+                            <div class="col cart-total-col">
+                                {% include "cart/cart_total.html" %}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                {% include "cart/checkout_buttons.html" %}
+                                <p class="text-muted mb-5">A summary of your cart contents is below.</p>
+                            </div>
+                        </div>
+                        {% for item in cart_items %}
+                            <div class="row">
+                                <div class="col-6 mb-2">
+                                    {% include "cart/product_info.html" %}
+                                </div>
+                            </div>
+                            <div class="row justify-content-start ml-1">
+                                <div class="col-12 text-left mb-2">
+                                    <p class="my-0">Price for each: £{{ item.product.price }}</p>
+                                    <p class="my-0">Total Price: £{{ item.product.price | calc_subtotal:item.quantity }}</p>
+                                </div>
+                                <div class="col-4">
+                                    {% include "cart/quantity_form.html" %}
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="table-responsive rounded d-none d-md-block">
                         <table class="table table-sm table-borderless">
                             <thead class="text-black">
                                 <tr>
@@ -35,18 +64,7 @@
                             {% for item in cart_items %}
                                 <tr class="cart-table-row">
                                     <td class="p-3 cart-product-block">
-                                        <div class="card rounded-0 cart-product-card">
-                                            <div class="row justify-content-center align-content-center cart-product-img">
-                                                {% if item.product.image %}
-                                                    <img class="product-img-cart object-fit-scale" src="{{ item.product.image.url }}" alt="{{ product.name }}">
-                                                {% else %}
-                                                    <img class="product-img-cart object-fit-scale" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
-                                                {% endif %}
-                                            </div>                        
-                                            <div class="card-body bg-grey text-white">
-                                                <p class="card-title cart-product-name">{{ item.product.name }}</p>
-                                            </div>
-                                        </div>
+                                        {% include "cart/product_info.html" %}
                                     </td>
                                     <td class="py-3">
                                         <p class="my-0">{{ item.product.price }}</p>
@@ -63,30 +81,12 @@
                             {% endfor %}
                             <tr>
                                 <td colspan="5" class="pt-5 text-right">
-                                    <h2><strong>Cart Total: £{{ total|floatformat:2 }}</strong></h2>
-                                    <h2>Delivery: £{{ delivery|floatformat:2 }}</h2>
-                                    <h1 class="mt-4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h1>
-                                    {% if free_delivery_delta > 0 %}
-                                        <p class="mb-1 text-danger">
-                                            You could get free delivery by spending just <strong>£{{ free_delivery_delta }}</strong> more!
-                                        </p>
-                                    {% endif %}
+                                    {% include "cart/cart_total.html" %}
                                 </td>
                             </tr>
                             <tr>
                                 <td colspan="5" class="text-right">
-                                    <a href="{% url 'products' %}" class="btn btn-white rounded-0 btn-lg">
-                                        <span class="icon">
-                                            <i class="fas fa-chevron-left"></i>
-                                        </span>
-                                        <span class="text-uppercase">Keep Shopping</span>
-                                    </a>
-                                    <a href="{% url 'checkout' %}" class="btn btn-black rounded-0 btn-lg">
-                                        <span class="text-uppercase">Secure Checkout</span>
-                                        <span class="icon">
-                                            <i class="fas fa-lock"></i>
-                                        </span>
-                                    </a>
+                                    {% include "cart/checkout_buttons.html" %}
                                 </td>
                             </tr>
                         </table>

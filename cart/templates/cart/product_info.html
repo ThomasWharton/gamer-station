@@ -1,0 +1,12 @@
+<div class="card rounded-0 cart-product-card">
+    <div class="row justify-content-center align-content-center cart-product-img">
+        {% if item.product.image %}
+            <img class="product-img-cart object-fit-scale" src="{{ item.product.image.url }}" alt="{{ product.name }}">
+        {% else %}
+            <img class="product-img-cart object-fit-scale" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+        {% endif %}
+    </div>                        
+    <div class="card-body bg-grey text-white">
+        <p class="card-title cart-product-name">{{ item.product.name }}</p>
+    </div>
+</div>
