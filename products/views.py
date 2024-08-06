@@ -53,15 +53,23 @@ def product_detail(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
 
     if request.method == 'POST':
-        review_form = ReviewForm(request.POST)
+        review_form = ReviewForm(data=request.POST)
         if review_form.is_valid():
             review = review_form.save(commit=False)
             review.product = product
             review.user = request.user
             review.save()
-            return redirect('product_detail', product_id=product.id)
-    else:
-        review_form = ReviewForm()
+            messages.success(
+                request,
+                'Review submitted successfully!'
+            )
+        else:
+            print(review_form.errors)
+            messages.error(
+                request, 'Failed to submit review'
+            )
+
+    review_form = ReviewForm()
 
     context = {
         "product": product,

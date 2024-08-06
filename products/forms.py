@@ -24,11 +24,11 @@ class ProductForm(forms.ModelForm):
 class ReviewForm(forms.ModelForm):
 
     RATING_CHOICES = [
-        (1, ''),
-        (2, ''),
-        (3, ''),
-        (4, ''),
-        (5, ''),
+        (1, '1'),
+        (2, '2'),
+        (3, '3'),
+        (4, '4'),
+        (5, '5'),
     ]
 
     rating = forms.ChoiceField(
@@ -39,7 +39,7 @@ class ReviewForm(forms.ModelForm):
 
     class Meta:
         model = Review
-        fields = '__all__'
+        exclude = ['product', 'user']
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
