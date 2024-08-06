@@ -315,6 +315,39 @@ body {
     font-size: 2rem;
 }
 
+#id_rating {
+    list-style-type: none;
+    display: flex;
+    gap: 2px;
+    padding: 0;
+    margin: 0;
+}
+
+.rating-container {
+    display: flex;
+    align-items: center;
+}
+
+.rating-container input {
+    display: none;
+}
+
+.rating-container label {
+    font-size: 1,6rem;
+    color: var(--white);
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+
+.rating-container input:checked ~ label {
+    color: var(--battleship-grey);
+}
+
+.rating-container label:hover,
+.rating-container label:hover ~ label {
+    color: var(--battleship-grey);
+}
+
 
 
 /* Cart */

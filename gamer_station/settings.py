@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEV' in os.environ
 
-ALLOWED_HOSTS = ['8000-thomaswhart-gamerstatio-vnozeceqzrp.ws.codeinstitute-ide.net', 'gamer-station-81a7c846cefe.herokuapp.com']
+ALLOWED_HOSTS = ['8000-thomaswhart-gamerstatio-vnozeceqzrp.ws.codeinstitute-ide.net', 'gamer-station-81a7c846cefe.herokuapp.com', '8000-thomaswhart-gamerstatio-4xp7mmzvm0o.ws-eu115.gitpod.io']
 
 
 # Application definition
