@@ -90,15 +90,25 @@
         </form>
     </div>
     <div class="row">
-        <div class="col-6">
+        <div class="col-12 col-md-6">
             <h3 class="mt-5">Reviews</h3>
             {% if reviews %}
                 {% for review in reviews %}
                     <div class="bg-transparent-grey p-3 mb-1">
-                        <p><i class="fas fa-star"></i> {{ review.rating }}</p>
-                        <p>{{ review.review }}</p>
+                        <p id="rating{{ review.id }}" class="text-white"><i class="fas fa-star"></i> {{ review.rating }}</p>
+                        <p id="review{{ review.id }}">{{ review.review }}</p>
                         <p><small>Posted by: {{ review.user }}</small></p>
                         <p><small>{{ review.created_on|date:"d/m/Y, H:i" }}</small></p>
+                        {% if user.is_authenticated and review.user == request.user or request.user.is_superuser %}
+                            <button class="btn btn-delete btn-black text-uppercase" data-review_id="{{ review.id }}">
+                                Delete
+                            </button>
+                        {% endif %}
+                        {% if user.is_authenticated and review.user == request.user %}
+                            <button class="btn btn-edit btn-white text-uppercase" data-review_id="{{ review.id }}">
+                                Edit
+                            </button>
+                        {% endif %}
                     </div>
                 {% endfor %}
                 <div class="pagination">
@@ -117,10 +127,10 @@
                 <p>No reviews yet! Why not leave one!</p>
             {% endif %}
         </div>
-        <div class="col-6">
+        <div class="col-12 col-md-6">
             <h3 class="mt-5">Leave a Review</h3>
             {% if request.user.is_authenticated %}
-                <form method="POST">
+                <form method="POST" id="reviewForm">
                     {% csrf_token %}
                     <div class="form-group rating-container">
                         <h4 class="mr-2">Rating</h4>
@@ -129,7 +139,7 @@
                     <div class="form-group">
                         {{ review_form.review | as_crispy_field }}
                     </div>
-                    <button type="submit" class="btn btn-black">Submit Review</button>
+                    <button type="submit" id="submitButton" class="btn btn-black">Submit Review</button>
                 </form>
             {% else %}
                 <a href="{% url 'account_signup' %}" class="text-info">Create an account</a> or
@@ -137,12 +147,33 @@
             {% endif %}
         </div>
     </div>
+</div>
 
+<!-- Delete confirmatiopn modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">
+                    Delete review?
+                </h5>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">X</button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete your review?
+                This action cannot be undone.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <a href="#" id="deleteConfirm" class="btn btn-danger">Delete</a>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}
 
 {% block postloadjs %}
     {{ block.super }}
     {% include 'products/includes/quantity_input_script.html' %}
-    <script src="{% static "js/star_rating.js" %}"></script>
+    <script src="{% static 'js/reviews.js' %}"></script>
 {% endblock %}
