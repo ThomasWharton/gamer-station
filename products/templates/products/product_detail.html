@@ -139,7 +139,7 @@
                     <div class="form-group">
                         {{ review_form.review | as_crispy_field }}
                     </div>
-                    <button type="submit" id="submitButton" class="btn btn-black">Submit Review</button>
+                    <button type="submit" id="submitButton" class="btn btn-black text-uppercase">Submit Review</button>
                 </form>
             {% else %}
                 <a href="{% url 'account_signup' %}" class="text-info">Create an account</a> or
