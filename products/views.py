@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Avg, Count, Q
@@ -51,6 +52,17 @@ def product_detail(request, product_id):
     """A view to show an individual products details"""
 
     product = get_object_or_404(Product, pk=product_id)
+    reviews = Review.objects.filter(product=product).order_by('-created_on')
+
+    paginator = Paginator(reviews, 5)
+    page = request.GET.get('page', 1)
+
+    try:
+        reviews = paginator.page(page)
+    except PageNotAnInteger:
+        reviews = paginator.page(1)
+    except EmptyPage:
+        reviews = paginator.page(paginator.num_pages)
 
     if request.method == 'POST':
         review_form = ReviewForm(data=request.POST)
@@ -63,6 +75,7 @@ def product_detail(request, product_id):
                 request,
                 'Review submitted successfully!'
             )
+            return redirect(reverse('product_detail', args=[product_id]))
         else:
             print(review_form.errors)
             messages.error(
@@ -75,6 +88,7 @@ def product_detail(request, product_id):
         "product": product,
         'average_rating': product.average_rating(),
         'review_form': review_form,
+        'reviews': reviews
     }
 
     return render(request, 'products/product_detail.html', context)

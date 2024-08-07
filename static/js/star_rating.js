@@ -1,3 +1,5 @@
+// Script to highlight star rating on hover and on checked
+
 document.querySelectorAll('.rating-container ul li label').forEach((label, index, labels) => {
     label.addEventListener('mouseover', () => {
         highlightStars(index, labels);

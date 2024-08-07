@@ -24,7 +24,7 @@
                 <h3 class="card-title">{{ product.name }}</h3>
                 <p class="card-text">{{ product.description }}</p>
                 <p class="card-text">£{{ product.price }}</p>
-                <p class="card-text"><i class="fas fa-star"></i> {{ average_rating|default:"No ratings yet" }}</p>
+                <p class="card-text"><i class="fas fa-star"></i>{{ average_rating|floatformat:2|default:"No ratings yet" }}</p>
                 <p class="card-text">Reviews: {{ product.review_count }}</p>
                 {% if request.user.is_superuser %}
                 <div class="row ml-1">
@@ -90,19 +90,47 @@
         </form>
     </div>
     <div class="row">
-        <div class="col">
+        <div class="col-6">
+            <h3 class="mt-5">Reviews</h3>
+            {% for review in reviews %}
+                <div class="bg-transparent-grey p-3 mb-1">
+                    <p><i class="fas fa-star"></i> {{ review.rating }}</p>
+                    <p>{{ review.review }}</p>
+                    <p><small>Posted by: {{ review.user }}</small></p>
+                    <p><small>{{ review.created_on|date:"d/m/Y, H:i" }}</small></p>
+                </div>
+            {% endfor %}
+            <div class="pagination">
+                <span class="step-links">
+                    {% if reviews.has_previous %}
+                        <a href="?page=1">&laquo; first</a>
+                        <a href="?page={{ reviews.previous_page_number }}">previous</a>
+                    {% endif %}            
+                    {% if reviews.has_next %}
+                        <a href="?page={{ reviews.next_page_number }}">next</a>
+                        <a href="?page={{ reviews.paginator.num_pages }}">last &raquo;</a>
+                    {% endif %}
+                </span>
+            </div>
+        </div>
+        <div class="col-6">
             <h3 class="mt-5">Leave a Review</h3>
-            <form method="POST">
-                {% csrf_token %}
-                <div class="form-group rating-container">
-                    <h4 class="mr-2">Rating</h4>
-                    {{ review_form.rating }}
-                </div>
-                <div class="form-group">
-                    {{ review_form.review | as_crispy_field }}
-                </div>
-                <button type="submit" class="btn btn-primary">Submit Review</button>
-            </form>
+            {% if request.user.is_authenticated %}
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="form-group rating-container">
+                        <h4 class="mr-2">Rating</h4>
+                        {{ review_form.rating }}
+                    </div>
+                    <div class="form-group">
+                        {{ review_form.review | as_crispy_field }}
+                    </div>
+                    <button type="submit" class="btn btn-black">Submit Review</button>
+                </form>
+            {% else %}
+                <a href="{% url 'account_signup' %}" class="text-info">Create an account</a> or
+                <a href="{% url 'account_login' %}" class="text-info">login</a> to leave a review
+            {% endif %}
         </div>
     </div>
 
