@@ -38,12 +38,15 @@ def all_products(request):
             sub_category = request.GET['sub_category']
             products = products.filter(sub_category=sub_category)
 
+    on_form_submit = request.GET.get('on_form_submit') == 'True'
+
     context = {
         'products': products,
         'categories': categories,
         'search_term': query,
         'selected_category': category,
         'selected_sub_category': sub_category,
+        'on_form_submit': on_form_submit,
     }
     return render(request, 'products/products.html', context)
 
@@ -109,7 +112,7 @@ def add_product(request):
         if form.is_valid():
             product = form.save()
             messages.success(request, 'Well done, you successfully added a product! Way to go big man!')
-            return redirect(reverse('product_detail', args=[product.id]))
+            return HttpResponseRedirect(f"{reverse('product_detail', args=[product.id])}?on_form_submit=True")
         else:
             messages.error(request, 'Failed to add product. You done messed up big man!')
     else:
@@ -135,7 +138,7 @@ def edit_product(request, product_id):
         if form.is_valid():
             form.save()
             messages.success(request, 'Well done, you successfully updated a product! Way to go big man!')
-            return redirect(reverse('product_detail', args=[product.id]))
+            return HttpResponseRedirect(f"{reverse('product_detail', args=[product_id])}?on_form_submit=True")
         else:
             messages.error(request, 'Failed to update product. You done messed up big man!')
     else:
@@ -160,7 +163,7 @@ def delete_product(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
     messages.success(request, 'Successfully deleted product')
-    return redirect (reverse('products'))
+    return HttpResponseRedirect(f"{reverse('products')}?on_form_submit=True")
 
 
 def review_edit(request, product_id, review_id):
