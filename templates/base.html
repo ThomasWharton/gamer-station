@@ -148,7 +148,11 @@
                     links
                 </div>
                 <div class="col-12 col-md-6">
-                    newsletter form
+                    <form method="POST" action="{% url 'subscribe' %}">
+                        {% csrf_token %}
+                        {{ subscriber_form|crispy }}
+                        <button type="submit" class="btn-white btn text-uppercase">Subscribe</button>
+                    </form>
                 </div>
             </div>
         </footer>
