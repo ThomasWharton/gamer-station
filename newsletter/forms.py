@@ -10,3 +10,4 @@ class SubscriberForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
+        self.fields['subscriber'].widget.attrs['placeholder'] = "Enter your email"

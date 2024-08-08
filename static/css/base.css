@@ -29,6 +29,24 @@ body {
     font-size: 1.6rem;
     letter-spacing: 1px;
 }
+ /* Footer */
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    overflow-x: hidden;
+    border: 2px solid var(--raisin-black);
+}
+
+#div_id_subscriber > label {
+    display: none;
+}
+
+#id_subscriber {
+    width: 30rem;
+}
 
 /* General Elements */
 
@@ -242,6 +260,10 @@ body {
 }
 
 /* Products */
+
+.products-container {
+    padding-bottom: 10rem;
+}
 
 .category {
     font-size: 4rem;
