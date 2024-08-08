@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container bg-transparent-grey rounded-10 mb-2 mobile-top-margin newsletter-container">
+        <div class="row justify-content-center">
+            <div class="col-10">
+                <h2 class="logo-font m-4 text-uppercase text-center cart-heading">Newsletter</h2>
+                <form method="POST" action="">
+                    {% csrf_token %}
+                    {{ newsletter_form|crispy }}
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

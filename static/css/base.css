@@ -462,6 +462,13 @@ footer {
     gap: 1rem;
 }
 
+/* Newsletter */
+
+.newsletter-container {
+    max-width: 60rem !important;
+}
+
+
 /* Media Queries */
 
 /* Slightly larger container on xl screens */
@@ -539,6 +546,10 @@ footer {
     .product-form-label {
         margin-left: 1rem;
     }
+
+    .newsletter-container {
+        max-width: 50rem !important;
+    }
 }
 
 @media (max-width: 1105px) {
@@ -583,5 +594,9 @@ footer {
 
     .quantity-col {
         margin-left: 6.5rem;
+    }
+
+    .newsletter-container {
+        max-width: 30rem !important;
     }
 }

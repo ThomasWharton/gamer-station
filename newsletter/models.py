@@ -9,8 +9,8 @@ class NewsletterSubscriber(models.Model):
         return self.subscriber
 
 class Newsletter(models.Model):
-    subject = models.CharField(max_length=120, default="placeholder subject")
-    content = models.TextField(default="placeholder content")
+    subject = models.CharField(max_length=120)
+    content = models.TextField()
     created_on = models.DateField(auto_now_add=True)
 
     def __str__(self):

@@ -1,7 +1,7 @@
 from django.shortcuts import render, HttpResponseRedirect
 from django.contrib import messages
 from .models import NewsletterSubscriber, Newsletter
-from .forms import SubscriberForm
+from .forms import SubscriberForm, NewsletterForm
 
 
 def subscribe(request):
@@ -17,3 +17,15 @@ def subscribe(request):
                 Please contact us for assistance.")
 
     return HttpResponseRedirect('/')
+
+
+def newsletter(request):
+    newsletter_form = NewsletterForm()
+
+    template = "newsletter/newsletter.html"
+
+    context = {
+        'newsletter_form': newsletter_form
+    }
+
+    return render(request, template, context)
