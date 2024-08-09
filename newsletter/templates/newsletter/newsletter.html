@@ -14,14 +14,17 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container bg-transparent-grey rounded-10 mb-2 mobile-top-margin newsletter-container">
-        <div class="row justify-content-center">
-            <div class="col-10">
-                <h2 class="logo-font m-4 text-uppercase text-center cart-heading">Newsletter</h2>
-                <form method="POST" action="">
-                    {% csrf_token %}
-                    {{ newsletter_form|crispy }}
-                </form>
+    <div class="height-90">
+        <div class="container bg-transparent-grey rounded-10 mb-2 mobile-top-margin newsletter-container">
+            <div class="row justify-content-center">
+                <div class="col-10">
+                    <h2 class="logo-font m-4 text-uppercase text-center cart-heading">Newsletter</h2>
+                    <form method="POST" action="">
+                        {% csrf_token %}
+                        {{ newsletter_form|crispy }}
+                        <button class="btn btn-white rounded-0 mb-2 text-uppercase font-weight-bold" type="'submit">Send</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
