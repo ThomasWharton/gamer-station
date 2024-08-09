@@ -22,7 +22,7 @@ def cache_checkout_data(request):
         metadata = {
             'cart': json.dumps(request.session.get('cart', {})),
             'save_info': request.POST.get('save_info'),
-            'username': request.user.username,
+            'username': request.user,
         }
         stripe.PaymentIntent.modify(pid, metadata=metadata)
 

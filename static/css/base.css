@@ -29,10 +29,11 @@ body {
     font-size: 1.6rem;
     letter-spacing: 1px;
 }
+
  /* Footer */
 
 footer {
-    position: fixed;
+    position: relative;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -257,6 +258,14 @@ footer {
     height: 5rem;
     font-size: 2rem;
     font-weight: 300;
+}
+
+.container-height {
+    height: 100%;
+}
+
+.height-90 {
+    height: 90vh;
 }
 
 /* Products */
