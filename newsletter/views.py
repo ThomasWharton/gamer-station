@@ -25,12 +25,13 @@ def send_newsletter(newsletter):
     subscribers = newsletter.get_subscribers()
     subject = newsletter.subject
     body = newsletter.content
+    email_list = [subscriber.subscriber for subscriber in subscribers]
 
     send_mail(
         subject,
         body,
         settings.DEFAULT_FROM_EMAIL,
-        [subscribers]
+        email_list,
     )
 
 def newsletter(request):
