@@ -13,7 +13,8 @@
         {% endblock %}
 
         {% block corecss %}
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
             <link rel="stylesheet" href="{% static 'css/base.css' %}">
         {% endblock %}
 
@@ -140,7 +141,25 @@
         <footer class="mt-3 bg-grey">
             <div class="row">
                 <div class="col-12 col-md-6 ml-2">
-                    links
+                    <h3 class="mt-2 mb-2 text-white text-center">Follow our socials!</h3>
+                    <div class="row text-white justify-space-around">
+                        <a  
+                            href="https://facebook.com" 
+                            target="_blank" 
+                            rel="noopener"
+                            class="text-white socials"
+                            aria-label="Join us on Facebook!">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                        <a  
+                            href="https://x.com/" 
+                            target="_blank" 
+                            rel="noopener"
+                            class="text-white socials"
+                            aria-label="Follow us on twitter!">
+                            <i class="fa-brands fa-square-twitter"></i>
+                        </a>
+                    </div>
                 </div>
                 <div class="col-12 col-md-5 ml-2">
                     <h3 class="mt-2 mb-2 text-white">Subscribe to our newsletter by entering your email below!</h3>

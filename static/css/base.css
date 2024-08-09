@@ -51,6 +51,14 @@ footer {
 
 /* General Elements */
 
+.justify-space-around {
+    justify-content: space-around;
+}
+
+.socials {
+    font-size: 3rem;
+}
+
 .container-margin {
     margin: 170px 0 0 20px;
 }
